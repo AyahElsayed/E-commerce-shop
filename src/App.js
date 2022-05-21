@@ -1,9 +1,10 @@
+import Products from './components/Products';
 import './style.scss'
 
 function App() {
   return (
     <div >
-      Test
+      <Products />
     </div>
   );
 }
