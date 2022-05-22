@@ -10,7 +10,7 @@ const Product = ({ itemdata }) => {
       <Card.Body >
         <Card.Title className='d-flex justify-content-between' >
           {itemdata.name}
-          <span > {itemdata.price}</span>
+          <span > ${itemdata.price}</span>
         </Card.Title>
         <Card.Text className='text-muted'>
           {itemdata.description}
