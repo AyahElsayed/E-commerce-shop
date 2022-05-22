@@ -4,13 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import products from '../data'
 import Product from './product/Product'
 import { Link } from "react-router-dom";
+import './style.scss'
 
 const Products = ({productsData}) => {
 
   console.log('data from products',productsData)
   
   return (
-    <Container fluid>
+    <Container fluid className='productsContainer'>
       <div className='title'>
         Welcome to our Ammazing shop
         <Link to="/cart">Cart</Link>
