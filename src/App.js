@@ -1,17 +1,15 @@
-import Products from './components/Products';
+// import Products from './components/Products';
 import './style.scss';
 import { Routes, Route, Link } from "react-router-dom";
+import { Home } from './Home';
 
 function App() {
   return (
     <div >
-
       <Routes>
-        <Route path="/" element={<Products />} />
+        <Route path="/" element={<Home />} />
         <Route path="cart" element={<Cart />} />
       </Routes>
-
-      {/* <Products /> */}
     </div>
   );
 }
