@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { MdAddShoppingCart } from 'react-icons/md';
 import './style.scss'
 
 const Product = ({ itemdata }) => {
@@ -16,7 +16,7 @@ const Product = ({ itemdata }) => {
           {itemdata.description}
         </Card.Text>
         <Card.Text className='d-flex justify-content-end'>
-          <AiOutlineShoppingCart className='cartIcon ' />
+          <MdAddShoppingCart className='cartIcon ' />
         </Card.Text>
       </Card.Body>
     </Card>
