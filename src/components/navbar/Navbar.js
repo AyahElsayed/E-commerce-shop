@@ -14,10 +14,11 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
+          <Navbar.Text className='position-relative'>
             <Link to="/cart">
               <MdShoppingCart className='cartshopingIcon ' />
             </Link>
+            <span className='badge'>5</span>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
