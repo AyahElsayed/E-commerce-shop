@@ -4,7 +4,7 @@ import './style.scss'
 import { MdShoppingCart } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({itemsCount}) => {
   return (
     <Navbar bg="dark" variant="dark" fixed="top">
       <Container>
@@ -18,7 +18,7 @@ const NavBar = () => {
             <Link to="/cart">
               <MdShoppingCart className='cartshopingIcon ' />
             </Link>
-            <span className='badge'>5</span>
+            <span className='badge'>{itemsCount}</span>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
