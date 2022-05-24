@@ -1,33 +1,22 @@
 // import Products from './components/Products';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Home } from './Home';
-import NavBar from './components/navbar/Navbar';
+// import NavBar from './components/navbar/Navbar';
+import Cart from './components/cart/Cart';
+import Checkout from './components/checkout/Checkout';
 
 function App() {
   return (
     <div >
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="checkout" element={<Checkout />} />
       </Routes>
     </div>
   );
 }
 
-function Cart() {
-  return (
-    <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>
-          Go to all products
-        </p>
-      </main>
-      <nav>
-        <Link to="/"> products</Link>
-      </nav>
-    </>
-  );
-}
+
 export default App;

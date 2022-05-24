@@ -5,25 +5,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Product from './product/Product'
 import { Link } from "react-router-dom";
 import './style.scss'
+import NavBar from './navbar/Navbar';
 
-const Products = ({productsData}) => {
+const Products = ({ productsData }) => {
 
-  console.log('data from products',productsData)
-  
+  console.log('data from products', productsData)
+
   return (
-    <Container fluid className='productsContainer'>
-      <div className='title'>
-        Welcome to our Ammazing shop
-        <Link to="/cart">Cart</Link>
-      </div>
-      <Row className='justify-content-center'>
-        {productsData.map((product) => (
-          <Col sm={12} md={5} lg={3} className="m-2" key={product.id} >
-            <Product itemdata={product} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <>
+    <NavBar />
+      <Container fluid className='productsContainer'>
+        <div className='title'>
+          Welcome to our Ammazing shop
+          {/* <Link to="/cart">Cart</Link> */}
+        </div>
+        <Row className='justify-content-center'>
+          {productsData.map((product) => (
+            <Col sm={12} md={5} lg={3} className="m-2" key={product.id} >
+              <Product itemdata={product} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </>
   )
 }
 
