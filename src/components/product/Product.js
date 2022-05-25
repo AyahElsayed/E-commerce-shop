@@ -3,15 +3,12 @@ import { Card } from 'react-bootstrap';
 import { MdAddShoppingCart } from 'react-icons/md';
 import './style.scss';
 import Button from 'react-bootstrap/Button';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 
 const Product = ({ itemdata, addToCart }) => {
   // const [itemsCount, setItemsCount] = useState(0)
-
-  // const addToCart = () => {
-  //   setItemsCount(itemsCount + 1)
-  // }
+  // const [selcteditem, setSelcteditem] = useState([]);
 
   return (
     <Card style={{ width: '18rem' }} key={itemdata.id} >
@@ -25,7 +22,7 @@ const Product = ({ itemdata, addToCart }) => {
           {itemdata.description}
         </Card.Text>
         <Card.Text className='d-flex justify-content-end'>
-          <Button variant="light" onClick={addToCart} >
+          <Button variant="light" onClick={() => addToCart()} >
             <MdAddShoppingCart className='cartIcon ' />
           </Button>
         </Card.Text>

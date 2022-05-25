@@ -4,9 +4,12 @@ import './style.scss'
 import { MdShoppingCart } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
-const NavBar = ({itemsCount}) => {
+const NavBar = ({ itemsCount, selcteditem }) => {
+  console.log('selcteditem from nav', selcteditem)
+  console.log('itemsCount from nav', itemsCount)
+
   return (
-    <Navbar bg="dark" variant="dark" fixed="top">
+    <Navbar bg="dark" variant="dark" fixed="top" >
       <Container>
         <Navbar.Brand href="/">
           <img src='./assets/logo.png' alt='logo' className='logo'></img>
@@ -15,8 +18,8 @@ const NavBar = ({itemsCount}) => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text className='position-relative'>
-            <Link to="/cart">
-              <MdShoppingCart className='cartshopingIcon ' />
+            <Link to="/cart" >
+              <MdShoppingCart className='cartshopingIcon'  />
             </Link>
             <span className='badge'>{itemsCount}</span>
           </Navbar.Text>
@@ -25,5 +28,6 @@ const NavBar = ({itemsCount}) => {
     </Navbar>
   )
 }
+
 
 export default NavBar
