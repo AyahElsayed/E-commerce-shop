@@ -3,10 +3,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import products from '../data'
 import Product from './product/Product'
-// import { Link } from "react-router-dom";
 import './style.scss'
 import NavBar from './navbar/Navbar';
 import { useEffect, useState } from 'react';
+import { MdShoppingCart } from 'react-icons/md';
+import CartItems from './cart/Cart';
 
 const Products = ({ productsData }) => {
 
@@ -37,11 +38,23 @@ const Products = ({ productsData }) => {
             <Col sm={12} md={5} lg={3} className="m-2" key={product.id} >
               <Product itemdata={product}
                 addToCart={() => addToCart(product)}
-                
               />
             </Col>
           ))}
         </Row>
+
+        {/* cart */}
+        <div className='container cartCointainer'>
+          <h3 className='cartTitle'>
+              your Shopping cart
+              <MdShoppingCart />
+          </h3>
+          {selcteditem.length ?
+            <CartItems selcteditem={selcteditem} />
+            :
+            <p>You have no items in your shopping cart, start adding some!</p>
+          }
+        </div>
       </Container>
     </>
   )

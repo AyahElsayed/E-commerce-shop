@@ -3,12 +3,9 @@ import { Card } from 'react-bootstrap';
 import { MdAddShoppingCart } from 'react-icons/md';
 import './style.scss';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
 
 
 const Product = ({ itemdata, addToCart }) => {
-  // const [itemsCount, setItemsCount] = useState(0)
-  // const [selcteditem, setSelcteditem] = useState([]);
 
   return (
     <Card style={{ width: '18rem' }} key={itemdata.id} >

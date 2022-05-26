@@ -1,42 +1,45 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 import './style.scss'
+import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
-import NavBar from '../navbar/Navbar';
+import { Link } from 'react-router-dom';
 
-const Cart = ( {selcteditem}) => {
-  console.log('selcteditem from cart',selcteditem)
-
-  const isEmpty = true;
-
-  const EmptyCart = () =>(
-    <p>You have no items in your shopping cart, start adding some!</p>
-  )
-
-  const FilledCart = () =>(
-    <p></p>
-  )
+const CartItems = ({ selcteditem }) => {
 
   return (
     <>
-      <NavBar/>
-      <div className='container cartContainer'>
-        <p>return to all
-          <Link to="/"> products</Link>
-        </p>
-        <h3>Your Shopping Cart</h3>
+      <Table striped bordered hover variant="dark" responsive>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Product Name</th>
+            <th>price</th>
+            <th>qty</th>
+            <th>total price</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        {selcteditem.map((item, index) => (
+          <tbody>
+            <tr>
+              <td>{index + 1}</td>
+              <td>{item.name} </td>
+              <td>${item.price}</td>
+              <td>+ -</td>
+              <td>$</td>
+              <td>delete</td>
+            </tr>
+          </tbody>
+        ))}</Table>
 
-        {isEmpty ? <EmptyCart /> : <FilledCart/> }
-        {/* <Products /> */}
-
-        <Button variant="light">
-          <Link to="/checkout">
-            Checkout
-          </Link>
-        </Button>
-      </div>
+      <h4>
+        Total:
+      </h4>
+      <Link to="/checkout">
+        <Button variant="secondary">Checkout</Button>
+      </Link>
     </>
   )
 }
 
-export default Cart
+export default CartItems

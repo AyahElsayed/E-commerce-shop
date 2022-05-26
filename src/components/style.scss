@@ -1,3 +1,17 @@
 .productsContainer{
   margin-top: 100px;
 }
+.cartTitle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .badgeCart{
+    display: inline-block;
+    background-color: #605555;
+    border-radius: 50%;
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+  }
+}
