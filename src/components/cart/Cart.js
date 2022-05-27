@@ -3,9 +3,23 @@ import './style.scss'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
 
-const CartItems = ({ selcteditem }) => {
+const CartItems = ({ selcteditem ,removeFromCart}) => {
 
+  const [cartTotal, setCartTotal] = useState(0);
+
+  const total = () => {
+    let totalVal = 0;
+    for (let i = 0; i < selcteditem.length; i++) {
+      totalVal += selcteditem[i].price;
+    }
+    setCartTotal(totalVal);
+  };
+
+  useEffect(() => {
+    total();
+  }, [selcteditem]);
   return (
     <>
       <Table striped bordered hover variant="dark" responsive>
@@ -27,13 +41,16 @@ const CartItems = ({ selcteditem }) => {
               <td>${item.price}</td>
               <td>+ -</td>
               <td>$</td>
-              <td>delete</td>
+              <td><Button
+                onClick={()=>removeFromCart(item.id)}
+              >delete</Button>
+              </td>
             </tr>
           </tbody>
         ))}</Table>
 
       <h4>
-        Total:
+        Total: ${cartTotal}
       </h4>
       <Link to="/checkout">
         <Button variant="secondary">Checkout</Button>

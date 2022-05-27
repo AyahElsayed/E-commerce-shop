@@ -22,6 +22,13 @@ const Products = ({ productsData }) => {
     // console.log('new items', selcteditem)
   };
 
+  const removeFromCart = (el) => {
+    let hardCopy = [...selcteditem];
+    hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el);
+    setSelcteditem(hardCopy);
+    console.log('items without removed', hardCopy)
+  };
+
   useEffect(() => {
     console.log('new items', selcteditem)
   }, [selcteditem])
@@ -46,11 +53,11 @@ const Products = ({ productsData }) => {
         {/* cart */}
         <div className='container cartCointainer'>
           <h3 className='cartTitle'>
-              your Shopping cart
-              <MdShoppingCart />
+            your Shopping cart
+            <MdShoppingCart />
           </h3>
           {selcteditem.length ?
-            <CartItems selcteditem={selcteditem} />
+            <CartItems selcteditem={selcteditem} removeFromCart={removeFromCart} />
             :
             <p>You have no items in your shopping cart, start adding some!</p>
           }
