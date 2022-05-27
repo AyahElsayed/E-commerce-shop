@@ -26,6 +26,7 @@ const Products = ({ productsData }) => {
     let hardCopy = [...selcteditem];
     hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el);
     setSelcteditem(hardCopy);
+    setItemsCount(itemsCount - 1);
     console.log('items without removed', hardCopy)
   };
 
