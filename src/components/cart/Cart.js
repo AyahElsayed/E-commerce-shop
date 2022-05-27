@@ -28,8 +28,6 @@ const CartItems = ({ selcteditem ,removeFromCart}) => {
             <th>#</th>
             <th>Product Name</th>
             <th>price</th>
-            <th>qty</th>
-            <th>total price</th>
             <th>actions</th>
           </tr>
         </thead>
@@ -39,8 +37,6 @@ const CartItems = ({ selcteditem ,removeFromCart}) => {
               <td>{index + 1}</td>
               <td>{item.name} </td>
               <td>${item.price}</td>
-              <td>+ -</td>
-              <td>$</td>
               <td><Button
                 onClick={()=>removeFromCart(item.id)}
               >delete</Button>
@@ -48,7 +44,6 @@ const CartItems = ({ selcteditem ,removeFromCart}) => {
             </tr>
           </tbody>
         ))}</Table>
-
       <h4>
         Total: ${cartTotal}
       </h4>

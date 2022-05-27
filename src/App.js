@@ -1,7 +1,5 @@
-// import Products from './components/Products';
 import { Routes, Route } from "react-router-dom";
 import { Home } from './Home';
-// import NavBar from './components/navbar/Navbar';
 import Cart from './components/cart/Cart';
 import Checkout from './components/checkout/Checkout';
 

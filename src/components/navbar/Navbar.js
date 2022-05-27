@@ -28,6 +28,4 @@ const NavBar = ({ itemsCount, selcteditem }) => {
     </Navbar>
   )
 }
-
-
 export default NavBar

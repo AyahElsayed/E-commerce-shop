@@ -34,7 +34,6 @@ export const Home = () => {
           :
           <Products productsData={productsData} />
       }
-      {/* <Products productsData={productsData} /> */}
     </div>
   )
 };
