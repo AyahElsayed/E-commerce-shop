@@ -3,13 +3,22 @@
   background: #cbbfbf47;
 
   .inputConatiner {
-    // margin: 4px;
+    margin: 2px;
     display: flex;
     flex-direction: column;
   }
   .errorMsg{
     color: red;
     font-size: 11px;
+
+  }
+  input{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  }
+  .submit{
+    margin: 19px;
 
   }
 }

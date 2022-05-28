@@ -3,6 +3,7 @@ import './style.scss'
 import { Form, Button } from 'react-bootstrap'
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
 
@@ -10,24 +11,30 @@ const Checkout = () => {
     initialValues: {
       firstName: "",
       lastName: "",
-      email: ""
+      email: "",
+      city: '',
+      address: '',
+      mobile: '',
     },
     validationSchema: Yup.object({
       firstName: Yup.string().max(10, "Must be 10 characters or less").required('Required'),
       lastName: Yup.string().max(15, "Must be 15 characters or less").required('Required'),
       email: Yup.string().email("Invalid email address").required('Required'),
-
+      city: Yup.string().max(15, "Must be 15 characters or less").required('Required'),
+      address: Yup.string().max(50, "Must be 50 characters or less").required('Required'),
+      mobile: Yup.string().max(10, "Must be 11 number").required('Required'),
     }),
     onSubmit: (values) => {
-      console.log('success')
-      
+      // console.log('success')
+      alert('Thanks for your shopping')
     }
   })
 
-  console.log(formik.errors)
+  // console.log(formik.errors)
   return (
     <Form onSubmit={formik.handleSubmit}
       className="container formContainer d-flex flex-column justify-content-center align-items-center">
+        <h2>Please fill your information</h2>
       <div className='inputConatiner'>
         <label>First name</label>
         <input
@@ -76,7 +83,62 @@ const Checkout = () => {
           : ''
         }
       </div>
-      <Button type="submit">Submit</Button>
+      <div className='inputConatiner'>
+        <label>City</label>
+        <input
+          id="city"
+          name="city"
+          type="text"
+          placeholder='city'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.city}
+        />
+        {formik.touched.city && formik.errors.city ?
+          <span className='errorMsg'>{formik.errors.city}</span>
+          : ''
+        }
+      </div>
+      <div className='inputConatiner'>
+        <label>Address</label>
+        <input
+          id="address"
+          name="address"
+          type="text"
+          placeholder='address'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.address}
+        />
+        {formik.touched.address && formik.errors.address ?
+          <span className='errorMsg'>{formik.errors.address}</span>
+          : ''
+        }
+      </div>
+
+      <div className='inputConatiner'>
+        <label>Mobile number</label>
+        <input
+          id="mobile"
+          name="mobile"
+          type="number"
+          placeholder='mobile'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.mobile}
+        />
+        {formik.touched.mobile && formik.errors.mobile ?
+          <span className='errorMsg'>{formik.errors.mobile}</span>
+          : ''
+        }
+      </div>
+
+      <div>
+        <Link to="/">
+          <Button className='back'>Back</Button>
+        </Link>
+          <Button className='submit' type="submit">Submit</Button>
+      </div>
     </Form>
   )
 }
