@@ -1,12 +1,22 @@
-.productsContainer{
+.productsContainer {
   margin-top: 100px;
+
+  .title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: monospace;
+    margin-bottom: 25px;
+  }
 }
-.cartTitle{
+
+.cartTitle {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  .badgeCart{
+
+  .badgeCart {
     display: inline-block;
     background-color: #605555;
     border-radius: 50%;
@@ -14,4 +24,8 @@
     left: 25px;
     bottom: 0;
   }
+}
+.cartDesc{
+  text-align: center;
+  color: #0000009e;
 }

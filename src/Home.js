@@ -12,7 +12,7 @@ export const Home = () => {
 
   useEffect(() => {
     Promise.all([products()]).then(res => {
-      console.log('products =>', res[0].data.data);
+      // console.log('products =>', res[0].data.data);
       setProductsData(res[0].data.data)
       setProductsDataLoading(false)
     }).catch((error) => {

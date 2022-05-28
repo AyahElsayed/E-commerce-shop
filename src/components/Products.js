@@ -15,7 +15,7 @@ const Products = ({ productsData }) => {
 
   const addToCart = (product) => {
     setItemsCount(itemsCount + 1);
-    console.log('selected item id', product.id);
+    // console.log('selected item id', product.id);
     setSelcteditem((arr) => [...arr, product]);
     // if i console here data appeare before updating
     // console.log('new items', selcteditem)
@@ -26,11 +26,11 @@ const Products = ({ productsData }) => {
     hardCopy = hardCopy.filter((cartItem) => cartItem.id !== el);
     setSelcteditem(hardCopy);
     setItemsCount(itemsCount - 1);
-    console.log('items without removed', hardCopy)
+    // console.log('items without removed', hardCopy)
   };
 
   useEffect(() => {
-    console.log('new items', selcteditem)
+    // console.log('new items', selcteditem)
   }, [selcteditem])
 
   return (
@@ -59,7 +59,7 @@ const Products = ({ productsData }) => {
           {selcteditem.length ?
             <CartItems selcteditem={selcteditem} removeFromCart={removeFromCart} />
             :
-            <p>You have no items in your shopping cart, start adding some!</p>
+            <p className='cartDesc'>You have no items in your shopping cart, start adding some!</p>
           }
         </div>
       </Container>

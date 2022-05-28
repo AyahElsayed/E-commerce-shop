@@ -25,12 +25,10 @@ const Checkout = () => {
       mobile: Yup.string().max(10, "Must be 11 number").required('Required'),
     }),
     onSubmit: (values) => {
-      // console.log('success')
       alert('Thanks for your shopping')
     }
   })
 
-  // console.log(formik.errors)
   return (
     <Form onSubmit={formik.handleSubmit}
       className="container formContainer d-flex flex-column justify-content-center align-items-center">

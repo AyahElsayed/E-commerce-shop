@@ -5,8 +5,8 @@ import { MdShoppingCart } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
 const NavBar = ({ itemsCount, selcteditem }) => {
-  console.log('selcteditem from nav', selcteditem)
-  console.log('itemsCount from nav', itemsCount)
+  // console.log('selcteditem from nav', selcteditem)
+  // console.log('itemsCount from nav', itemsCount)
 
   return (
     <Navbar bg="dark" variant="dark" fixed="top" >
