@@ -54,7 +54,7 @@ class CustomersController extends Controller
 
 if( $customer->save())
 {
-    return response()->json(['data' => $customer ], 202);
+    return response()->json(['data' => $customer  , 'message' => 'Data inserted successfuly'], 202);
 
 }
 
