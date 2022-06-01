@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://127.0.0.1:8000';
+export const BASE_URL = 'https://eco-furniture-mahmoudfarahat.herokuapp.com';
 export const END_POINTS = {
-    products: '/api/products'
+    products: '/api/allProducts'
 };
