@@ -18,9 +18,9 @@ const NavBar = ({ itemsCount, selcteditem }) => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text className='position-relative'>
-            <Link to="/cart" >
+            {/* <Link to="/cart" > */}
               <MdShoppingCart className='cartshopingIcon'  />
-            </Link>
+            {/* </Link> */}
             <span className='badge'>{itemsCount}</span>
           </Navbar.Text>
         </Navbar.Collapse>
